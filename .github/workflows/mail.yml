@@ -8,7 +8,7 @@ jobs:
     timeout-minutes: 30
     runs-on: ubuntu-latest
     env:
-      NODE_VERSION: '18.19.1'
+      NODE_VERSION: 18.19.1
       S3_BUCKET_NAME: ase-assessment-task-front
       CDN_DISTRIBUTION_ID: E1XYY6OJ3VEKMQ
       AWS_REGION: us-east-1
@@ -53,7 +53,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: {{ env.AWS_REGION }}
+          aws-region: ${{ env.AWS_REGION }}
 
       - name: Deploy
         run: |
