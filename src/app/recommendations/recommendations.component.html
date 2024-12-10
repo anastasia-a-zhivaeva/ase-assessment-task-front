@@ -1,0 +1,3 @@
+<ng-container *ngIf="recommendations$ | async as recommendations">
+  <app-recommendation-card *ngFor="let recommendation of recommendations" [recommendation]="recommendation"></app-recommendation-card>
+</ng-container>

@@ -1,0 +1,16 @@
+<mat-card class="recommendation-card" appearance="outlined" appRecommendationPriority [priority]="recommendation.priority">
+  <mat-card-content *ngIf="!recommendation.description; else headerWithContent">
+    {{ recommendation.title }}
+  </mat-card-content>
+</mat-card>
+
+<ng-template #headerWithContent>
+  <mat-card-header>
+    <mat-card-title-group>
+      <mat-card-title>{{ recommendation.title }}</mat-card-title>
+    </mat-card-title-group>
+  </mat-card-header>
+  <mat-card-content>
+    {{ recommendation.description }}
+  </mat-card-content>
+</ng-template>
